@@ -1,0 +1,81 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--spacing-md);
+    z-index: 1000;
+    transition: var(--transition-normal);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.navLinks {
+    display: flex;
+    gap: var(--spacing-md);
+    list-style: none;
+}
+
+.navLink {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.navLink:hover,
+.navLink.active {
+    color: var(--primary);
+    text-shadow: 0 0 8px var(--primary-glow);
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary);
+    transition: var(--transition-fast);
+    box-shadow: 0 0 8px var(--primary-glow);
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+    width: 100%;
+}
+
+.ctaButton {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    color: var(--primary);
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: 0 0 5px var(--primary-glow);
+}
+
+.ctaButton:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+}

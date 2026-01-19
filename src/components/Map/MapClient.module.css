@@ -1,0 +1,37 @@
+.marker {
+    background: transparent;
+    border: none;
+}
+
+.markerPin {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 2px solid white;
+    box-shadow: 0 0 10px var(--primary);
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.markerPinBusy {
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 240, 255, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+    }
+}
